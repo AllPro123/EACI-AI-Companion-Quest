@@ -25,7 +25,8 @@ var CaelumAnimTrigger = (function () {
   // Detection is fuzzy: the trigger phrase just needs to appear
   // anywhere in the cleaned message (not exact match).
   var REQUEST_MAP = [
-    // Physical actions
+    // Physical actions — pole phrases before generic "dance" so "dance on a pole" is not a plain dance
+    { key: 'pole_dance',  triggers: ['pole dance', 'dance on a pole', 'dance on the pole', 'dance around a pole', 'dance around the pole', 'dancing on a pole', 'dancing on the pole'] },
     { key: 'wave',        triggers: ['wave', 'say hi', 'hello wave', 'wave hello', 'hi wave'] },
     { key: 'walking',     triggers: ['walk', 'walking', 'walk around', 'take a walk', 'go for a walk'] },
     { key: 'running',     triggers: ['run', 'running', 'run forward', 'run away', 'sprint', 'take off running'] },
@@ -112,6 +113,7 @@ var CaelumAnimTrigger = (function () {
   // If her text contains any of these she acts it out automatically.
   var REPLY_ANIM_TRIGGERS = [
     { key: 'wave',        phrases: ['waves', 'waves at you', 'waving', '*waves*', '[waves]'] },
+    { key: 'pole_dance',  phrases: ['pole dance', 'dances on a pole', 'dancing on a pole', 'on the pole'] },
     { key: 'dancing',     phrases: ['dancing', 'starts dancing', 'dances', '*dances*', '[dances]'] },
     { key: 'jumping',     phrases: ['jumps', 'jumping up', '*jumps*'] },
     { key: 'running',     phrases: ['runs', 'running away', 'dashes', '*runs*', '*dashes*'] },

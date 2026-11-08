@@ -877,8 +877,9 @@ var CaelumAnim = (function () {
 
     var clips = CLIPS[action] || CLIPS[av.idleEmotion] || CLIPS.neutral;
     var path = _pickRotate(id, clips);
+    var loopAction = action === 'pole_dance';
 
-    if (thenIdle !== false) {
+    if (thenIdle !== false && !loopAction) {
       av.queue = [{
         path: _pickRotate(id, CLIPS[av.idleEmotion] || CLIPS.neutral),
         loop: false, emotion: av.idleEmotion, mode: 'idle'
@@ -886,7 +887,7 @@ var CaelumAnim = (function () {
     }
 
     return new Promise(function (res) {
-      _playClip(id, path, false, av.idleEmotion, 'action').then(function () {
+      _playClip(id, path, loopAction, av.idleEmotion, 'action').then(function () {
         // Resolve when the active video element fires 'ended'
         var avNow = _avatars[id];
         if (!avNow || !avNow.active) { res(); return; }
