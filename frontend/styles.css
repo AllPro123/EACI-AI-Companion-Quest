@@ -1,4 +1,19 @@
 
+/* Caelum pole dance — adult companion only, driven by caelum_pole_dance.js */
+.caelum-pole{position:absolute;left:50%;top:0;height:100%;width:16px;margin-left:-8px;border-radius:8px;z-index:6;pointer-events:none;background:linear-gradient(90deg,#5c4318 0%,#e8d39a 38%,#fff6d2 50%,#c4a15a 68%,#4a3412 100%);box-shadow:0 0 22px rgba(255,196,80,.55),inset 0 0 4px rgba(255,255,255,.7)}
+.caelum-pole::before,.caelum-pole::after{content:'';position:absolute;left:50%;width:28px;height:10px;margin-left:-14px;border-radius:6px;background:linear-gradient(180deg,#fff1c2,#a8843a)}
+.caelum-pole::before{top:-4px}
+.caelum-pole::after{bottom:-4px}
+body.caelum-pole-dance-on #caelumAvatarGuestBgWrap,
+body.caelum-pole-dance-on #caelumAvatarCenterWrap,
+body.caelum-pole-dance-on #caelumAvatarMainWrap{animation:caelumPoleOrbit 2.4s ease-in-out infinite;transform-origin:50% 72%;z-index:3}
+@keyframes caelumPoleOrbit{
+  0%{transform:translateX(-22%) rotate(-10deg) scale(.94)}
+  20%{transform:translateX(-6%) rotate(4deg) scale(1.02)}
+  45%{transform:translateX(20%) rotate(11deg) scale(.93)}
+  70%{transform:translateX(4%) rotate(-6deg) scale(1.04)}
+  100%{transform:translateX(-22%) rotate(-10deg) scale(.94)}
+}
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#060400;--bg2:#0a0700;--bg3:#0c0900;--accent:#00ffc8;--accent2:#36ffe0;--adim:rgba(0,255,200,.1);--text:#d8fff3;--dim:#8ba8a0;--muted:#5a7a92;--chad:#ffa500;--cdim:rgba(255,165,0,.1);--border:rgba(0,255,200,.12);--border2:rgba(0,255,200,.25)}
 html{scroll-behavior:smooth;background:#060400}

@@ -110,6 +110,7 @@
     excited: ['Caelum_excited.mp4'],
     joyful: ['Caelum_dancing.mp4', 'Caelum_jumping.mp4', 'Caelum_jumping (2).mp4'],
     dancing: ['Caelum_dancing.mp4'],
+    pole_dance: ['Caelum_dancing.mp4'],
     sad: ['Caelum_upset.mp4', 'Caelum_crying.mp4'],
     upset: ['Caelum_upset.mp4'],
     crying: ['Caelum_crying.mp4'],
